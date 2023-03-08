@@ -19,6 +19,10 @@ document.getElementById('play-first').addEventListener('click', () => {
   playFullScreen(displays[0])
 })
 
+document.getElementById('play-second').addEventListener('click', () => {
+  playFullScreen(displays[1])
+})
+
 const playFullScreen = (display) => {
   ipcRenderer.send('playFullScreen', display, document.getElementById('yt').src)
 }

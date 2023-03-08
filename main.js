@@ -15,6 +15,7 @@ const createWindow = () => {
   })
 
   win.webContents.openDevTools()
+  win.setMenu(null)
   win.loadFile('index.html')
 
   const displays = screen.getAllDisplays()
@@ -30,7 +31,8 @@ const createWindow = () => {
       height: display.size.height,
     })
     view.setFullScreen(true)
-    view.loadURL(args)
+    view.setMenu(null)
+    view.loadURL(args + '?autoplay=1')
   })
 }
 
